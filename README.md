@@ -23,6 +23,11 @@ Objetivo: Evoluir a estrutura da Entrega I aplicando **Design System**, **Grid/F
 - **Acessibilidade**
   - `aria-label`, `aria-expanded`, `role="menu"`, foco visível
   - Suporte à tecla **ESC** para fechar modal
+ 
+## 🖥️ Demonstração  
+👉 Acesse o site publicado: [https://evellyngois.github.io/ong-frontend-entrega2/](https://evellyngois.github.io/ong-frontend-entrega2/)
+
+---
 
 ## 🗂️ Estrutura
 
