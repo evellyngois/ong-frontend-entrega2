@@ -1,6 +1,6 @@
-# ONG Esperança — Entrega II (CSS3: Estilização e Leiautes)
+# ONG Esperança — Entrega II (CSS3: Estilização e Layouts)
 
-Projeto desenvolvido para a **Unidade 2 – Desenvolvimento Front-End** (UNICSUL).  
+Projeto desenvolvido para a **Atividade 2 – Desenvolvimento Front-End** (UNICSUL).  
 Objetivo: Evoluir a estrutura da Entrega I aplicando **Design System**, **Grid/Flex**, **responsividade** e **componentes**.
 
 ## ✅ O que foi implementado
