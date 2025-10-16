@@ -18,7 +18,7 @@ Objetivo: Evoluir a estrutura da Entrega I aplicando **Design System**, **Grid/F
 - **Componentes de Interface**
   - **Cards** responsivos (projetos)
   - **Botões** com estados (hover/focus/active/disabled)
-  - **Formulário** com validação visual e **toast** de sucesso/erro
+  - **Formulário** com validação nativa (HTML5) e **feedback** visual via toast
   - **Alerts**, **badges/tags**, **modal** de detalhes
 - **Acessibilidade**
   - `aria-label`, `aria-expanded`, `role="menu"`, foco visível
