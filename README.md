@@ -25,6 +25,8 @@ Objetivo: Evoluir a estrutura da Entrega I aplicando **Design System**, **Grid/F
   - Suporte à tecla **ESC** para fechar modal
 
 ## 🗂️ Estrutura
+
+<pre><code>/
 ong-frontend-entrega2/
 ├─ index.html
 ├─ projetos.html
@@ -40,6 +42,7 @@ ong-frontend-entrega2/
 │  └─ img/
 │     ├─ logo.jpeg
 │     └─ (outras imagens)
+  </code></pre>
 
 ## 🔗 Páginas
 - Início: `index.html`
