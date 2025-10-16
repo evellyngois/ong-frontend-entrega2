@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projetos — ONG Esperança</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand">
+        <img src="assets/img/logo.jpeg" alt="Logo da ONG Esperança" width="40" height="40">
+        ONG Esperança
+      </a>
+
+      <!-- Botão hambúrguer (aparece no mobile) -->
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"></button>
+
+      <!-- Navegação principal -->
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+
+        <!-- Submenu Projetos -->
+        <div class="has-submenu">
+          <!-- Corrigido: 'aria-expanded' deve ser false por padrão no HTML e ser gerenciado pelo JS -->
+          <button class="nav-item" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-projetos">
+            Projetos ▾
+          </button>
+          <div id="submenu-projetos" class="submenu" role="menu">
+            <a role="menuitem" href="#educacao">Educação & Capacitação</a>
+            <a role="menuitem" href="#saude">Saúde & Bem-estar</a>
+            <a role="menuitem" href="#voluntariado">Voluntariado & Doações</a>
+            <a role="menuitem" href="projetos.html">Todos os Projetos</a>
+          </div>
+        </div>
+
+        <a href="cadastro.html">Cadastro</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Alert opcional -->
+    <div class="alert success mt-3">
+      Novas turmas abertas para **Capacitação Tech**! Inscrições pelo botão dos cards.
+    </div>
+
+    <section class="section mt-3" id="educacao">
+      <h1>Projetos — Educação & Capacitação</h1>
+      <p class="muted">Cursos e oficinas para ampliar oportunidades de jovens e adultos.</p>
+
+      <div class="grid-12 mt-3">
+        <!-- Card 1 -->
+        <article class="card col-lg-4 col-12">
+          <img src="https://picsum.photos/seed/educacao1/800/480" alt="Alunos em capacitação tecnológica">
+          <h2>Capacitação Tech (Front-end)</h2>
+          <p>Aulas introdutórias de HTML, CSS e lógica de programação com mentoria.</p>
+          <div class="badges">
+            <span class="badge primary">Educação</span>
+            <span class="badge success">Inscrições abertas</span>
+          </div>
+          <div class="row">
+            <a class="btn primary" href="cadastro.html">Inscrever-se</a>
+            <!-- AQUI: Usando data-modal-target para acionar a função do main.js -->
+            <button class="btn ghost" data-modal-target="detalhes-tech-modal">Ver detalhes</button>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card col-lg-4 col-12">
+          <img src="https://picsum.photos/seed/educacao2/800/480" alt="Mentoria de estudo">
+          <h2>Reforço Escolar</h2>
+          <p>Monitorias semanais de matemática e leitura para alunos do ensino fundamental.</p>
+          <div class="badges">
+            <span class="badge primary">Educação</span>
+            <span class="badge">Vagas limitadas</span>
+          </div>
+          <div class="row">
+            <a class="btn primary" href="cadastro.html">Participar</a>
+            <button class="btn">Programação</button>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card col-lg-4 col-12">
+          <img src="https://picsum.photos/seed/educacao3/800/480" alt="Oficina de leitura">
+          <h2>Oficina de Leitura</h2>
+          <p>Encontros quinzenais para incentivar o hábito de leitura e escrita criativa.</p>
+          <div class="badges">
+            <span class="badge primary">Educação</span>
+            <span class="badge">Em andamento</span>
+          </div>
+          <div class="row">
+            <a class="btn" href="#">Saiba mais</a>
+            <a class="btn primary" href="cadastro.html">Quero participar</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section mt-3" id="saude">
+      <h2>Saúde & Bem-estar</h2>
+      <p class="muted">Atividades físicas, alimentação e saúde mental em foco.</p>
+
+      <div class="grid-12 mt-3">
+        <article class="card col-lg-4 col-12">
+          <img src="https://picsum.photos/seed/saude1/800/480" alt="Caminhada em grupo no parque">
+          <h3>Caminhada Comunitária</h3>
+          <p>Grupo semanal de caminhada com orientação e acompanhamento.</p>
+          <div class="badges">
+            <span class="badge">Saúde</span>
+            <span class="badge success">Ativo</span>
+          </div>
+          <a class="btn primary" href="cadastro.html">Participar</a>
+        </article>
+
+        <article class="card col-lg-4 col-12">
+          <img src="https://picsum.photos/seed/saude2/800/480" alt="Palestra de nutrição">
+          <h3>Educação Nutricional</h3>
+          <p>Workshops mensais com nutricionistas parceiros.</p>
+          <div class="badges">
+            <span class="badge">Saúde</span>
+          </div>
+          <a class="btn" href="#">Calendário</a>
+        </article>
+
+        <article class="card col-lg-4 col-12">
+          <img src="https://picsum.photos/seed/saude3/800/480" alt="Aula de alongamento">
+          <h3>Yoga & Alongamento</h3>
+          <p>Encontros gratuitos para alongar o corpo e acalmar a mente.</p>
+          <div class="badges">
+            <span class="badge">Bem-estar</span>
+          </div>
+          <a class="btn" href="#">Saiba mais</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section mt-3" id="voluntariado">
+      <h2>Voluntariado & Doações</h2>
+      <p class="muted">Apoie nossas iniciativas com tempo, talento ou recursos.</p>
+
+      <div class="grid-12 mt-3">
+        <article class="card col-lg-4 col-12">
+          <img src="https://picsum.photos/seed/vol1/800/480" alt="Pessoa entregando doação">
+          <h3>Campanha do Agasalho</h3>
+          <p>Coleta e distribuição de roupas de inverno para famílias vulneráveis.</p>
+          <div class="badges">
+            <span class="badge">Voluntariado</span>
+            <span class="badge success">Em curso</span>
+          </div>
+          <a class="btn primary" href="cadastro.html">Quero ajudar</a>
+        </article>
+
+        <article class="card col-lg-4 col-12">
+          <img src="https://picsum.photos/seed/vol2/800/480" alt="Mutirão de pintura">
+          <h3>Mutirão de Pintura</h3>
+          <p>Revitalização de espaços comunitários com apoio de voluntários.</p>
+          <div class="badges">
+            <span class="badge">Voluntariado</span>
+          </div>
+          <a class="btn" href="#">Detalhes</a>
+        </article>
+
+        <article class="card col-lg-4 col-12">
+          <img src="https://picsum.photos/seed/vol3/800/480" alt="Cesta básica">
+          <h3>Cestas Básicas</h3>
+          <p>Arrecadação e entrega mensal de cestas básicas.</p>
+          <div class="badges">
+            <span class="badge">Doações</span>
+          </div>
+          <a class="btn" href="#">Como doar</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer center">
+    <p>© 2025 ONG Esperança — Desenvolvido por <strong>Evellyn Gois</strong></p>
+  </footer>
+
+  <!-- Modal (detalhes de projeto) -->
+  <!-- AQUI: ID Adicionado para ser usado pelo data-modal-target -->
+  <div class="modal-backdrop" id="detalhes-tech-modal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Detalhes do projeto">
+      <header>
+        <h3>Detalhes — Capacitação Tech</h3>
+        <!-- AQUI: Botão de fechar usa a classe padrão que o main.js escuta -->
+        <button class="close" aria-label="Fechar Modal">X</button>
+      </header>
+      <p>Curso introdutório de Front-end (HTML, CSS, lógica) para iniciantes. Aulas presenciais e online, material gratuito e mentorias quinzenais.</p>
+      <div class="mt-2">
+        <a class="btn primary" href="cadastro.html">Inscrever-se</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="assets/js/main.js"></script>
+  <!-- AQUI: O script local foi removido, pois o main.js agora cuida de toda a interatividade do Modal e dos botões com data-modal-target. -->
+</body>
+</html>

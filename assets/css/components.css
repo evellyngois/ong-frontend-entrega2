@@ -1,0 +1,259 @@
+/* ===== Cards ===== */
+.card {
+ display: flex;
+ flex-direction: column;
+ /* Replicando o 'gap' do HTML: o gap entre os elementos diretos é 16px (var(--sp-2)) */
+ gap: var(--sp-2);
+ background: var(--color-surface-2); /* Card usa a superfície mais escura */
+}
+.card h2 { font-size: var(--fs-lg); }
+.card .muted { color: var(--color-muted); }
+.card img {
+    border-radius: calc(var(--radius) - 2px); /* Borda mais suave */
+    margin-bottom: var(--sp-2); /* Espaçamento entre imagem e título */
+    width: 100%;
+    height: auto;
+}
+
+
+/* ===== Botões (hover, focus, active, disabled) ===== */
+.btn {
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ gap: var(--sp-1);
+ padding: 10px 18px;
+ border-radius: 10px;
+ border: 1px solid var(--color-border);
+ background: var(--color-surface-2);
+ color: var(--color-text);
+ transition: transform .12s ease, box-shadow .2s ease, background .2s ease;
+ cursor: pointer;
+ font-weight: 500;
+ text-decoration: none; /* Para links que agem como botões */
+}
+.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-1); }
+.btn:active { transform: translateY(0); box-shadow: none; }
+.btn:focus-visible { outline: 3px solid var(--color-primary-700); outline-offset: 2px; }
+.btn:disabled { opacity: .6; cursor: not-allowed; }
+
+.btn.primary {
+ background: linear-gradient(135deg, var(--color-primary), var(--color-primary-700));
+ border: 0; color: #fff;
+}
+.btn.success { background: var(--color-secondary); border: 0; color: #052914; font-weight: 600; }
+.btn.ghost { background: transparent; border-color: var(--color-muted); color: var(--color-muted); }
+.btn.ghost:hover {
+    color: var(--color-text);
+    border-color: var(--color-primary);
+    background: rgba(45,156,219,.05);
+}
+
+
+/* ==============================================
+   3. Formulários (Inputs, Selects, Textareas)
+   ============================================== */
+.form-group { margin-bottom: var(--sp-3); }
+.label { 
+    display: block; 
+    margin-bottom: 6px; 
+    color: var(--color-muted); 
+    font-size: var(--fs-sm); 
+}
+
+.input, .select, .textarea {
+ width: 100%;
+ padding: 12px 14px;
+ border-radius: 10px;
+ border: 2px solid #24304f;
+ background: #0f1a33;
+ color: var(--color-text);
+ transition: border-color .2s ease, box-shadow .2s ease;
+ box-sizing: border-box; /* Essencial para que o padding não quebre o layout */
+ min-height: 44px; /* Aumenta a área de clique */
+}
+.select {
+    appearance: none; /* Remove estilo padrão do navegador */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23a8b3c7'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 16px;
+}
+.textarea { resize: vertical; min-height: 100px; }
+
+.input::placeholder { color: #6f7b95; }
+.input:focus, .select:focus, .textarea:focus {
+ border-color: var(--color-primary);
+ box-shadow: 0 0 0 3px rgba(45,156,219,.15);
+ outline: none;
+}
+/* Validação Visual */
+.input:valid, .select:valid, .textarea:valid { border-color: var(--color-secondary); }
+.input:invalid:not(:placeholder-shown):not(:focus), 
+.select:invalid:not(:disabled):not([selected]):not(:focus), 
+.textarea:invalid:not(:placeholder-shown):not(:focus) { 
+    border-color: var(--color-error); 
+}
+
+/* Checkbox Personalizado (LGPD em cadastro.html) */
+.checkbox-personalizado {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: var(--fs-md); /* Mantém o tamanho do texto legível */
+    color: var(--color-muted);
+}
+.checkbox-personalizado input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--color-border);
+    border-radius: 4px;
+    margin-right: var(--sp-2);
+    transition: all 0.2s ease;
+    position: relative;
+    flex-shrink: 0;
+    background: var(--color-surface-2);
+}
+.checkbox-personalizado input:checked ~ .checkmark {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+.checkbox-personalizado input:checked ~ .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-bg); /* Cor do checkmark escuro */
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 1;
+}
+.checkbox-personalizado input:invalid:not(:checked) ~ .checkmark {
+    border-color: var(--color-error);
+    box-shadow: 0 0 0 1px var(--color-error);
+}
+
+
+/* ===== Badges/Tags ===== */
+.badges { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 8px; 
+    margin-top: var(--sp-1);
+    margin-bottom: var(--sp-2); /* Adicionando espaço abaixo dos badges */
+}
+.badge {
+ display: inline-flex; 
+ align-items: center; 
+ gap: 6px;
+ padding: 6px 10px; 
+ border-radius: 999px; 
+ font-size: var(--fs-sm);
+ background: #0f1a33; 
+ border: 1px solid var(--color-border); 
+ color: var(--color-muted);
+}
+.badge.primary { 
+    background: rgba(45,156,219,.15); 
+    color: #9bd6f7; 
+    border-color: rgba(45,156,219,.35); 
+}
+.badge.success { 
+    background: rgba(34,197,94,.12); 
+    color: #a8f0c8; 
+    border-color: rgba(34,197,94,.35); 
+}
+
+/* ===== Alerts ===== */
+.alert {
+ padding: 12px 14px; 
+ border-radius: 10px; 
+ border: 1px solid var(--color-border);
+ background: #0f1a33; 
+ display: flex; 
+ gap: 10px; 
+ align-items: center;
+ font-weight: 500;
+}
+.alert.success { border-color: rgba(34,197,94,.4); background: rgba(34,197,94,.08); }
+.alert.warn { border-color: rgba(241,196,15,.4); background: rgba(241,196,15,.08); }
+.alert.error { border-color: rgba(231,76,60,.4); background: rgba(231,76,60,.08); }
+
+/* ===== Toast (usado pelo main.js) ===== */
+.toast {
+ position: fixed;
+ bottom: 30px;
+ left: 50%;
+ transform: translateX(-50%) translateY(100px);
+ background: var(--color-surface-2);
+ color: var(--color-text);
+ padding: 12px 24px;
+ border-radius: var(--radius);
+ border: 1px solid var(--color-border);
+ box-shadow: var(--shadow-1);
+ opacity: 0;
+ transition: all .4s ease;
+ z-index: 9999;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+.toast.info { border-left: 4px solid var(--color-primary); }
+.toast.success { border-left: 4px solid var(--color-secondary); }
+.toast.error { border-left: 4px solid var(--color-error); }
+
+/* ===== Modal ===== */
+.modal-backdrop {
+ position: fixed; inset: 0; background: rgba(0,0,0,.7); /* Escureceu o fundo */
+ display: none; align-items: center; justify-content: center; z-index: 1500;
+  padding: var(--sp-3);
+}
+.modal-backdrop.open { 
+    display: flex; 
+    /* Adiciona fade-in sutil */
+    animation: fadeIn .3s ease-out forwards;
+}
+.modal {
+ width: min(520px, 92vw); 
+ background: var(--color-surface);
+ border: 1px solid var(--color-border); 
+ border-radius: 16px;
+ padding: var(--sp-3); 
+ box-shadow: var(--shadow-2);
+  /* Adiciona um pop-up sutil */
+  transform: translateY(-20px);
+  animation: modalSlideUp .3s ease-out forwards;
+}
+.modal header {
+ display: flex; justify-content: space-between; align-items: center;
+ margin-bottom: var(--sp-2);
+}
+.modal .close {
+ background: transparent; 
+ border: 1px solid var(--color-border);
+ border-radius: 10px; 
+ padding: 6px 10px; 
+ cursor: pointer;
+  color: var(--color-muted);
+  transition: all .2s ease;
+}
+.modal .close:hover {
+    color: var(--color-error);
+    border-color: var(--color-error);
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes modalSlideUp {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}

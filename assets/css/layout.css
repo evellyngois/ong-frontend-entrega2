@@ -1,0 +1,145 @@
+/* ===== Container e Grid de 12 colunas ===== */
+.container {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  padding: 0 var(--sp-2);
+}
+
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--sp-3);
+}
+
+/* Colunas úteis (mobile-first) */
+.col-12 { grid-column: span 12; }
+.col-6  { grid-column: span 6; }
+.col-4  { grid-column: span 4; }
+.col-3  { grid-column: span 3; }
+
+/* ===== Breakpoints (5 exigidos) ===== */
+@media (max-width: 1200px) { /* desktop médio */ }
+@media (max-width: 992px)  { .col-lg-6 { grid-column: span 6; } }
+@media (max-width: 768px)  { /* tablet */
+  .grid-12 { gap: var(--sp-2); }
+  .col-6, .col-4, .col-3 { grid-column: span 12; }
+}
+@media (max-width: 576px)  { /* celular médio */
+  .container { width: 94vw; }
+}
+@media (max-width: 400px)  { /* celular pequeno */
+  :root { --fs-md:.95rem; }
+}
+
+/* ===== Header e Navegação ===== */
+.site-header {
+  position: sticky; top:0; z-index: 1000;
+  backdrop-filter: blur(8px);
+  background: rgba(10,15,30,.6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navbar {
+  display:flex; align-items:center; justify-content:space-between;
+  gap: var(--sp-2); padding: var(--sp-2) 0;
+}
+
+.brand { display:flex; align-items:center; gap: var(--sp-1); font-weight:700; }
+
+.nav {
+  display:flex; gap: var(--sp-1);
+  background: #0f1a33; border:1px solid var(--color-border);
+  padding: 6px; border-radius: 999px;
+}
+
+.nav a, .nav button.nav-item {
+  display:inline-flex; align-items:center; gap:8px;
+  padding: 8px 14px; border-radius: 999px; border:0; background: transparent;
+  color: var(--color-text); cursor:pointer;
+}
+.nav a.active { background: var(--color-surface-2); }
+
+/* Submenu (dropdown) */
+.has-submenu { position: relative; }
+.submenu {
+  position:absolute; top: calc(100% + 8px); left:0; min-width: 220px;
+  background: var(--color-surface); border:1px solid var(--color-border);
+  border-radius: var(--radius); padding: 6px; display:none; box-shadow: var(--shadow-2);
+}
+.has-submenu:focus-within .submenu,
+.has-submenu:hover .submenu { display:block; }
+.submenu a { display:block; padding:10px 12px; border-radius:8px; }
+.submenu a:hover { background: var(--color-surface-2); }
+
+/* Menu hambúrguer (mobile) */
+.menu-toggle {
+  display:none; width:40px; height:40px; border-radius:10px;
+  border:1px solid var(--color-border); background: var(--color-surface);
+}
+@media (max-width: 768px) {
+  .menu-toggle { display:inline-flex; align-items:center; justify-content:center; }
+  .nav { display:none; width:100%; border-radius:14px; }
+  .nav.is-open { display:flex; flex-direction:column; gap:6px; padding:8px; }
+  .submenu { position: static; display:none; }
+  .has-submenu.open .submenu { display:block; }
+}
+
+/* Footer */
+.site-footer {
+  margin-top: var(--sp-6);
+  padding: var(--sp-4) 0;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+}
+
+/* ===== Ícone do menu hamburguer (3 linhas em CSS) ===== */
+.menu-toggle {
+  position: relative;
+  width: 44px; height: 44px;
+  padding: 10px; /* deixa espaço interno para as linhas */
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-surface);
+  cursor: pointer;
+}
+
+/* linha do meio via background */
+.menu-toggle {
+  background-image: linear-gradient(var(--color-text), var(--color-text));
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px 2px; /* largura x espessura */
+}
+
+/* linhas de cima/baixo */
+.menu-toggle::before,
+.menu-toggle::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 24px; height: 2px;
+  background: var(--color-text);
+  transform: translateX(-50%);
+  transition: transform .3s ease, top .3s ease, bottom .3s ease, opacity .2s ease;
+}
+
+.menu-toggle::before { top: 12px; }   /* linha de cima */
+.menu-toggle::after  { bottom: 12px; }/* linha de baixo */
+
+/* estado aberto (vira X) */
+.menu-toggle[aria-expanded="true"] {
+  background-image: none; /* esconde a linha do meio */
+}
+.menu-toggle[aria-expanded="true"]::before {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.menu-toggle[aria-expanded="true"]::after {
+  bottom: auto;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* foco/hover acessíveis */
+.menu-toggle:hover { box-shadow: var(--shadow-1); }
+.menu-toggle:focus-visible { outline: 3px solid var(--color-primary-700); outline-offset: 2px; }

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ONG Esperança</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand">
+        <!-- Use o nome real do arquivo que está em assets/img -->
+        <img src="assets/img/logo.jpeg" alt="Logo da ONG Esperança" width="40" height="40">
+        ONG Esperança
+      </a>
+
+      <!-- Botão hambúrguer (aparece no mobile) -->
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"></button>
+
+      <!-- Navegação principal -->
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="index.html" class="active">Início</a>
+
+        <!-- Submenu Projetos -->
+        <div class="has-submenu">
+          <button class="nav-item" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-projetos">
+            Projetos ▾
+          </button>
+          <div id="submenu-projetos" class="submenu" role="menu">
+            <a role="menuitem" href="projetos.html">Todos os Projetos</a>
+            <a role="menuitem" href="projetos.html#educacao">Educação & Capacitação</a>
+            <a role="menuitem" href="projetos.html#saude">Saúde & Bem-estar</a>
+            <a role="menuitem" href="projetos.html#voluntariado">Voluntariado & Doações</a>
+          </div>
+        </div>
+
+        <a href="cadastro.html">Cadastro</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h1>Missão, Visão e Valores</h1>
+
+      <div class="card">
+        <h2>Nossa missão</h2>
+        <p>Promover inclusão social por meio de projetos educacionais e apoio comunitário.</p>
+        <!-- Use o nome real do arquivo que você tem na pasta img -->
+        <img src="assets/img/acaosocial.jpg" alt="Equipe voluntária em atividade recente">
+      </div>
+
+      <div class="card mt-3">
+        <h2>Nossa visão</h2>
+        <p>Ser referência em projetos de impacto e transparência na aplicação de recursos.</p>
+      </div>
+
+      <div class="card mt-3">
+        <h2>Nossos valores</h2>
+        <ul>
+          <li>Transparência</li>
+          <li>Empatia</li>
+          <li>Responsabilidade</li>
+          <li>Colaboração</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer center">
+    <p>© 2025 ONG Esperança — Desenvolvido por <strong>Evellyn Gois</strong></p>
+  </footer>
+
+  <!-- JS -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

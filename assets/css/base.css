@@ -1,0 +1,94 @@
+/* =========================
+   RESET ESSENCIAL + ACESSO
+   ========================= */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img { max-width: 100%; display: block; }
+button, input, select, textarea { font: inherit; }
+:focus-visible { outline: 3px solid #1f6fa0; outline-offset: 2px; }
+
+/* =========================
+   DESIGN SYSTEM (tema escuro ONG)
+   Cumpre: 8+ cores, 5 tamanhos, escala 8–64px
+   ========================= */
+:root {
+  /* 🎨 Paleta (8+ cores) */
+  --color-bg: #0b132b;           /* fundo base */
+  --color-surface: #141c2f;      /* bloco 1 */
+  --color-surface-2: #1e2740;    /* bloco 2 */
+  --color-primary: #2d9cdb;      /* azul principal */
+  --color-primary-700: #1f6fa0;  /* azul escuro */
+  --color-secondary: #22c55e;    /* sucesso */
+  --color-warning: #f1c40f;      /* alerta */
+  --color-error: #e74c3c;        /* erro */
+  --color-text: #e6edf3;         /* texto */
+  --color-muted: #a8b3c7;        /* texto fraco */
+  --color-border: #26314e;       /* linhas/bordas */
+
+  /* ✍️ Tipografia (5 níveis) */
+  --fs-xxl: 2.375rem; /* ~38px - H1 */
+  --fs-xl: 1.875rem;  /* ~30px - H2 */
+  --fs-lg: 1.25rem;   /* 20px  - H3 */
+  --fs-md: 1rem;      /* 16px  - base */
+  --fs-sm: .875rem;   /* 14px  - notas */
+
+  /* 📏 Espaçamentos (8px…64px) */
+  --sp-1: 8px;
+  --sp-2: 16px;
+  --sp-3: 24px;
+  --sp-4: 32px;
+  --sp-5: 48px;
+  --sp-6: 64px;
+
+  /* 🔲 Extras */
+  --radius: 12px;
+  --shadow-1: 0 6px 30px rgba(0,0,0,.25);
+  --shadow-2: 0 10px 40px rgba(0,0,0,.35);
+}
+
+@media (max-width: 1200px) {
+  :root { --fs-xxl: 2rem; --fs-xl: 1.625rem; }
+}
+
+/* =========================
+   BASE VISUAL
+   ========================= */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: radial-gradient(80rem 80rem at -20% -20%, #0f1734 0%, var(--color-bg) 45%) fixed;
+  color: var(--color-text);
+  line-height: 1.55;
+}
+
+h1 { font-size: var(--fs-xxl); margin: var(--sp-4) 0 var(--sp-2); }
+h2 { font-size: var(--fs-xl);  margin: var(--sp-3) 0 var(--sp-2); }
+h3 { font-size: var(--fs-lg);  margin: var(--sp-2) 0 var(--sp-1); }
+p, li { font-size: var(--fs-md); color: var(--color-text); }
+
+a { color: var(--color-primary); text-decoration: none; }
+a:hover { color: #7cc7f0; }
+
+/* Caixas padrão (seções/card) – combinam com seu print */
+.section, .card, .box {
+  background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-surface-2) 100%);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-1);
+  padding: var(--sp-3);
+}
+.small { padding: var(--sp-2); }
+
+/* Imagens dentro de cards com cantos suaves */
+.card img, .section img {
+  border-radius: 14px;
+  border: 1px solid var(--color-border);
+}
+
+/* Rodapé */
+.site-footer {
+  margin-top: var(--sp-6);
+  padding: var(--sp-4) 0;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+  text-align: center;
+}
